@@ -96,7 +96,7 @@ If that all sounds like ancient Greek to you, never fear. If you take it one ste
 
 **General**
 
-- [ ] The artifact produced is a repo with at least two sub-folders: `postalicious/` and `sandbox-server/`.
+- [x] The artifact produced is a repo with at least two sub-folders: `postalicious/` and `sandbox-server/`.
 - [ ] Repository includes a README file with basic installation and setup instructions.
 - [ ] All dependencies are properly declared in `package.json`.
 - [ ] All major features are added via pull requests with a clear description and concise commit messages.

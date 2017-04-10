@@ -1,0 +1,27 @@
+{
+  "name": "murky-cliffchat-postalicious",
+  "version": "1.0.0",
+  "description": "postalicious-goal-194-murky-cliffchat",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm run sandbox-server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lisabronwyn/murky-cliffchat-postalicious.git"
+  },
+  "keywords": [
+    "postalicious"
+  ],
+  "author": "teqnickels, lisabronwyn",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/lisabronwyn/murky-cliffchat-postalicious/issues"
+  },
+  "homepage": "https://github.com/lisabronwyn/murky-cliffchat-postalicious#readme",
+  "dependencies": {
+    "body-parser": "^1.17.1",
+    "express": "^4.15.2",
+    "http": "0.0.0"
+  }
+}
