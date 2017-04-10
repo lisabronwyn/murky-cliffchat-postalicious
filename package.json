@@ -2,9 +2,10 @@
   "name": "murky-cliffchat-postalicious",
   "version": "1.0.0",
   "description": "postalicious-goal-194-murky-cliffchat",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
-    "test": "npm run sandbox-server"
+    "sandbox": "nodemon ./sandbox-server/server.js"
+
   },
   "repository": {
     "type": "git",
