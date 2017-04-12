@@ -5,10 +5,6 @@ const server = require('../sandbox-server/server.js')
 chai.use(chaiHttp)
 const should = require('chai').should()
 
-
-//
-// chai.should()
-
 describe('sandbox-server', () => {
     context('homepage, onload', () => {
       it('Should respond with a status code of 200', (done) => {
@@ -74,9 +70,10 @@ describe('sandbox-server', () => {
   })
 })
     context('Get HTML file', () => {
-      it.only('Should respond with a status code of 200', (done) => {
+      it('Should respond with a status code of 200', (done) => {
         chai.request(server)
-      .get('/somefile')
+      .get('/somefiles')
+      .set('Accept', 'text/html')
       .end((error, response) => {
         expect(response).to.have.status(200)
         expect(response.text).to.equal('<!DOCTYPE html><html><body>This is an HTML file</body></html>')
