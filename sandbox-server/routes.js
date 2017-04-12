@@ -47,6 +47,10 @@ router.post('/admin-only', function(request, response) {
   response.status(403).end();
 })
 
+router.post('/not-a-page', function(request, response) {
+  response.status(404).end();
+})
+
 // Add other routes here
 
 module.exports = router
