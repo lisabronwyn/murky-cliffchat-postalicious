@@ -17,7 +17,7 @@ server.use(bodyParser.text({
 
 server.use(express.static(path.join(__dirname, "public")))
 
-server.get('/', (request, response) => {
+app.get('/', (request, response) => {
   response.set('content-type', 'text/plain')
   response.status(200).send('Welcome to Sandbox!')
 })
