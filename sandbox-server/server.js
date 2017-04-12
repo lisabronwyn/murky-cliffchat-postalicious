@@ -1,18 +1,22 @@
 const express = require('express')
 const bodyParser = require('body-parser')
-const http = require('http')
+const path = require('path')
+const port = 3000
 
 const app = express()
-const port = 3001
+const http = require('http').createServer(app)
+const server = express.Router()
 
 app.use(bodyParser.text())
 
-app.get('/', function(req, res) {
+app.use(express.static(path.join(__dirname, "public")))
+
+server.get('/', function(req, res) {
   res.set('Content-Type', 'text/plain')
   res.status(200).send('Welcome to Sandbox!')
 })
 
-app.get('/search', function(req, res) {
+server.get('/search', function(req, res) {
   if ('q' in req.query) {
     res.set('Content-Type', 'text/plain')
     res.status(200).send(`You searched for: "${req.query.q}"`)
@@ -22,13 +26,13 @@ app.get('/search', function(req, res) {
   }
 })
 
-app.post('/things', function(req, res) {
+server.post('/things', function(req, res) {
   res.set('Content-Type', 'text/plain')
   res.status(201).send(`New thing created: "${req.body}"!`)
 })
 
 // Add other routes here
+app.set(port)
+http.listen(port)
 
-app.listen( function() {
-  console.log('Listening on port ' + port)
-})
+module.exports = server
