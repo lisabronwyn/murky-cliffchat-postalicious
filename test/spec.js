@@ -54,7 +54,7 @@ describe('sandbox-server', () => {
       .send({'New thing created': 'flying car'})
       .end((error, response) => {
         expect(response).to.have.status(201)
-        expect(response.text).to.equal('New thing created: flying car')
+        expect(response.text).to.equal('New thing created: flying car!')
         expect(response).to.have.header('content-type', 'text/plain; charset=utf-8')
         done()
     })
