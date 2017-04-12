@@ -6,7 +6,8 @@
   "scripts": {
     "sandbox": "nodemon ./sandbox-server/server.js",
     "test": "mocha test/spec.js",
-    "lint": "eslint ."
+    "lint": "eslint .",
+    "pl": "nodemon ./postalicious/server.js"
   },
   "repository": {
     "type": "git",
@@ -32,7 +33,9 @@
     "eslint-plugin-standard": "^3.0.1",
     "express": "^4.15.2",
     "http": "0.0.0",
-    "morgan": "^1.8.1"
+    "morgan": "^1.8.1",
+    "request": "^2.81.0",
+    "request-promise": "^4.2.0"
   },
   "devDependencies": {
     "eslint": "^3.19.0",

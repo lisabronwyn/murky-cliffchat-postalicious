@@ -12,3 +12,9 @@ server.use(bodyParser.json())
 server.use(bodyParser.urlencoded({extended: false}))
 server.use(express.static(path.join(__dirname, 'public')))
 server.use('/', index)
+
+server.use(logger("combined"))
+server.set(port)
+http.listen(port)
+
+module.exports = server
