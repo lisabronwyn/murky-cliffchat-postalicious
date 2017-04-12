@@ -18,6 +18,7 @@ describe('sandbox-server', () => {
       })
   })
 })
+
     context('Search for doodads', () => {
       it('Should respond with a status code of 200', (done) => {
         chai.request(server)
@@ -74,7 +75,11 @@ describe('sandbox-server', () => {
       .get('/somefile')
       .end((error, response) => {
         expect(response).should.have.status(200)
+
         expect(response.text).should.equal('<!DOCTYPE html><html><body>Thisis an HTML file</body></html>')
+
+        expect(response.text).should.equal('<!DOCTYPE html><html><body>This is an HTML file</body></html>')
+
         expect(response).should.have.header('Content-type', 'text/html;charset=utf-9')
         done()
     })
