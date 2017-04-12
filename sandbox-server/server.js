@@ -10,29 +10,32 @@ const app = express()
 const http = require('http').createServer(app)
 const server = express.Router()
 
-app.use(bodyParser.text())
+server.use(bodyParser.text({
+  defaultCharset: 'utf-8',
+  type: 'text/plain'
+}))
 
-app.use(express.static(path.join(__dirname, "public")))
+server.use(express.static(path.join(__dirname, "public")))
 
-
-server.get('/', function(req, res) {
-  res.set('Content-Type', 'text/plain')
-  res.status(200).send('Welcome to Sandbox!')
+server.get('/', (request, response) => {
+  response.set('content-type', 'text/plain')
+  response.status(200).send('Welcome to Sandbox!')
 })
 
-server.get('/search', function(req, res) {
-  if ('q' in req.query) {
-    res.set('Content-Type', 'text/plain')
-    res.status(200).send(`You searched for: "${req.query.q}"`)
-  } else {
-    res.set('Content-Type', 'text/plain')
-    res.status(400).send("You didn't provide a search query term :(")
-  }
+server.get('/search', (request, response) => {
+  if(request.query.q) {
+    response.status(200)
+      .type('text/plain')
+        .send('You searched for: \"' + request.query.q + '\"')
+}
+    response.status(400)
+      .type('text/plain')
+        .send('You didn\'t provide a search query term \:\(')
 })
 
-server.post('/things', function(req, res) {
-  res.set('Content-Type', 'text/plain')
-  res.status(201).send(`New thing created: "${req.body}"!`)
+server.post('/things', (request, response) => {
+  response.set('Content-Type', 'text/plain')
+  response.status(201).send('New thing created: \"' + request.body + '\"!')
 })
 
 app.use('/', routes)
