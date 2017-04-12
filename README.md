@@ -146,7 +146,7 @@ _Note: to get a jump start on the sandbox server, you can use the provided [Scaf
   - [ ] a 301 (Moved Permanently) status code
   - [ ] the `Location` header set to `http://localhost:3000/newpage`
 - [x] Sending a `POST` request to the path `/admin-only` responds with a 403 (Forbidden) status code
-- [ ] Sending a `GET` request to the path `/not-a-page` responds with a 404 (Not Found) status code
+- [x] Sending a `GET` request to the path `/not-a-page` responds with a 404 (Not Found) status code
 - [ ] Sending a `GET` request to the path `/server-error` responds with a 500 (Internal Server Error) staus code
 
 **Postalicious**
