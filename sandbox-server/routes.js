@@ -32,11 +32,20 @@ router.get('/somefiles', function(request, response) {
     response.status(200).send('<!DOCTYPE html><html><body>This is an HTML file</body></html>')
 })
 
-router.get('/myjsondata', function(request, response) {
-  response.set('content-type', 'application/json')
-    response.status(200).send({"title":"some JSON data"})
-})
 
+
+
+
+
+
+
+
+
+
+
+router.post('/admin-only', function(request, response) {
+  response.status(403).end();
+})
 
 // Add other routes here
 
