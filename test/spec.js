@@ -83,13 +83,14 @@ describe('sandbox-server', () => {
   })
 })
     context('Get JSON data', () => {
-      it('Should respond with a status code of 200', (done) => {
+      it.only('Should respond with a status code of 200', (done) => {
         chai.request(server)
-      .get('application/json')
+      .get('/myjsondata')
+      .set('Accept', 'application/json')
       .end((error, response) => {
         expect(response).to.have.status(200)
-        expect(response.text).to.equal('{ "title": "some JSON data" }')
-        expect(response).to.have.header('Content-type', 'application/json')
+        expect(response.text).to.equal('{"title":"some JSON data"}')
+        expect(response).to.have.header('content-type', 'application/json; charset=utf-8')
         done()
     })
   })
