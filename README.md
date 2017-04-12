@@ -138,14 +138,14 @@ _Note: to get a jump start on the sandbox server, you can use the provided [Scaf
   - [x] a 200 (OK) status code
   - [x] an HTML response body with the content `<!DOCTYPE html><html><body>This is an HTML file</body></html>`
   - [x] the `Content-Type` header set to `text/html`
-- [ ] Sending a `GET` request to the path `/myjsondata` with an `Accept` header of `application/json` responds with...
-  - [ ] a 200 (OK) status code
-  - [ ] an HTML response body with the content `{ "title": "some JSON data" }`
-  - [ ] the `Content-Type` header set to `application/json`
-- [ ] Sending a `GET` request to the path `/old-page` responds with...
+- [x] Sending a `GET` request to the path `/myjsondata` with an `Accept` header of `application/json` responds with...
+  - [x] a 200 (OK) status code
+  - [x] an HTML response body with the content `{ "title": "some JSON data" }`
+  - [x] the `Content-Type` header set to `application/json`
+- [] Sending a `GET` request to the path `/old-page` responds with...
   - [ ] a 301 (Moved Permanently) status code
   - [ ] the `Location` header set to `http://localhost:3000/newpage`
-- [ ] Sending a `POST` request to the path `/admin-only` responds with a 403 (Forbidden) status code
+- [x] Sending a `POST` request to the path `/admin-only` responds with a 403 (Forbidden) status code
 - [ ] Sending a `GET` request to the path `/not-a-page` responds with a 404 (Not Found) status code
 - [ ] Sending a `GET` request to the path `/server-error` responds with a 500 (Internal Server Error) staus code
 
