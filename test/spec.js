@@ -100,7 +100,7 @@ describe('sandbox-server', () => {
         chai.request(server)
         .get('/old-page')
         .end((error, response) => {
-          expect(response).to.have.status(301)
+          expect(response.statusCode).to.equal(301)
           expect(response.header['content-location']).to.have.header('http://localhost:3000/newpage')
           done()
     })

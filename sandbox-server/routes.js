@@ -32,26 +32,20 @@ router.get('/somefiles', (request, response) => {
     response.status(200).send('<!DOCTYPE html><html><body>This is an HTML file</body></html>')
 })
 
-
-router.get('/myjsondata', function(request, response) {
+router.get('/myjsondata', (request, response) => {
   response.set('content-type', 'application/json')
     response.status(200).send({"title":"some JSON data"})
 })
 
-router.get('/old-page', function(request, response) {
-  response.status(301)
-  response.location('http://localhost:3000/newpage')
+router.get('/old-page', (request, response) => {
+  response.redirect(301, '/newpage')
 })
 
-
-
-
-
-
-
-
-
-
+router.get('/new-page', (request, response) => {
+  console.log('YOU NO WORK')
+  response.status(301)
+    .set('content-location', 'http://localhost:3000/newpage')
+})
 
 router.post('/admin-only', (request, response) => {
   response.status(403).end();
