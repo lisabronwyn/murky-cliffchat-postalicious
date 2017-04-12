@@ -33,6 +33,11 @@ router.get('/somefiles', (request, response) => {
 })
 
 
+router.get('/myjsondata', function(request, response) {
+  response.set('content-type', 'application/json')
+    response.status(200).send({"title":"some JSON data"})
+})
+
 
 
 
