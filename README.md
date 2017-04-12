@@ -112,32 +112,32 @@ _Note: to get a jump start on the sandbox server, you can use the provided [Scaf
 - [ ] Can run the command `npm run sandbox-server` (or `npm run sb`, if you want to save some typing) to start the sandbox web server at port 3000.
 - [ ] The sandbox server source code is written using the [Express][express] library.
 - [ ] Sending a `GET` request to the path `/` responds with...
-  - [ ] a 200 (OK) status code
-  - [ ] a plain-text response body with the content `Welcome to Sandbox!`
-  - [ ] the `Content-Type` header set to `text/plain`
-- [ ] Sending a `GET` request to the path `/search?q=doodads` responds with...
-  - [ ] a 200 (OK) status code
-  - [ ] a plain-text response body with the content `You searched for: "doodads"`
+  - [x] a 200 (OK) status code
+  - [x] a plain-text response body with the content `Welcome to Sandbox!`
+  - [x] the `Content-Type` header set to `text/plain`
+- [x] Sending a `GET` request to the path `/search?q=doodads` responds with...
+  - [x] a 200 (OK) status code
+  - [x] a plain-text response body with the content `You searched for: "doodads"`
     - NOTE: (it doesn't need to actually do any searching, just return the plain text)
     - NOTE: "doodads" is a placeholder for whatever string is in the `q` query param
   - [ ] the `Content-Type` header set to `text/plain`
-- [ ] Sending a `GET` request to the path `/search` responds with...
-  - [ ] a 400 (Bad Request) status code
-  - [ ] a plain-text response body with the content `You didn't provide a search query term :(`
-  - [ ] the `Content-Type` header set to `text/plain`
-- [ ] Sending a `POST` request to the path `/things` with a plain text body `flying car` responds with...
-  - [ ] a 201 (Created) status code
-  - [ ] a plain-text response body with the content `New thing created: "flying car"!` (it doesn't need to actually create anything, just return the plain text)
+- [x] Sending a `GET` request to the path `/search` responds with...
+  - [x] a 400 (Bad Request) status code
+  - [x] a plain-text response body with the content `You didn't provide a search query term :(`
+  - [x] the `Content-Type` header set to `text/plain`
+- [x] Sending a `POST` request to the path `/things` with a plain text body `flying car` responds with...
+  - [x] a 201 (Created) status code
+  - [x] a plain-text response body with the content `New thing created: "flying car"!` (it doesn't need to actually create anything, just return the plain text)
     - NOTE: "flying car" is just a placeholder for whatever string is sent in the POST body.
-  - [ ] the `Content-Type` header set to `text/plain`
-- [ ] Sending a `GET` request to the path `/somefile` with an `Accept` header of `text/plain` responds with...
-  - [ ] a 200 (OK) status code
-  - [ ] a plain-text response body with the content `This is a plain text file`
-  - [ ] the `Content-Type` header set to `text/plain`
-- [ ] Sending a `GET` request to the path `/somefile` with an `Accept` header of `text/html` responds with...
-  - [ ] a 200 (OK) status code
-  - [ ] an HTML response body with the content `<!DOCTYPE html><html><body>This is an HTML file</body></html>`
-  - [ ] the `Content-Type` header set to `text/html`
+  - [x] the `Content-Type` header set to `text/plain`
+- [x] Sending a `GET` request to the path `/somefile` with an `Accept` header of `text/plain` responds with...
+  - [x] a 200 (OK) status code
+  - [x] a plain-text response body with the content `This is a plain text file`
+  - [x] the `Content-Type` header set to `text/plain`
+- [x] Sending a `GET` request to the path `/somefile` with an `Accept` header of `text/html` responds with...
+  - [x] a 200 (OK) status code
+  - [x] an HTML response body with the content `<!DOCTYPE html><html><body>This is an HTML file</body></html>`
+  - [x] the `Content-Type` header set to `text/html`
 - [ ] Sending a `GET` request to the path `/myjsondata` with an `Accept` header of `application/json` responds with...
   - [ ] a 200 (OK) status code
   - [ ] an HTML response body with the content `{ "title": "some JSON data" }`
