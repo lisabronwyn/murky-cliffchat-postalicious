@@ -23,13 +23,11 @@ router.post('/things', function(request, response) {
 })
 
 router.get('/somefile', function(request, response) {
-  console.log(request.headers)
   response.set('content-type', 'text/plain')
     response.status(200).send('This is a plain text file')
 })
 
-router.get('/somefile', function(request, response) {
-  console.log(request.headers)
+router.get('/somefiles', function(request, response) {
   response.set('content-type', 'text/html')
     response.status(200).send('<!DOCTYPE html><html><body>This is an HTML file</body></html>')
 })
