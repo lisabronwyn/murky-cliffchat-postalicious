@@ -3,13 +3,17 @@ const bodyParser = require('body-parser')
 const path = require('path')
 const port = 3000
 
+const routes = require('./routes.js')
+
 const app = express()
+
 const http = require('http').createServer(app)
 const server = express.Router()
 
 app.use(bodyParser.text())
 
 app.use(express.static(path.join(__dirname, "public")))
+
 
 server.get('/', function(req, res) {
   res.set('Content-Type', 'text/plain')
@@ -31,8 +35,8 @@ server.post('/things', function(req, res) {
   res.status(201).send(`New thing created: "${req.body}"!`)
 })
 
-// Add other routes here
-app.set(port)
+app.use('/', routes)
+
 http.listen(port)
 
-module.exports = server
+module.exports = app
