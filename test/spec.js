@@ -83,7 +83,7 @@ describe('sandbox-server', () => {
   })
 })
     context('Get JSON data', () => {
-      it.only('Should respond with a status code of 200', (done) => {
+      it('Should respond with a status code of 200', (done) => {
         chai.request(server)
       .get('/myjsondata')
       .set('Accept', 'application/json')
@@ -107,11 +107,11 @@ describe('sandbox-server', () => {
   })
 })
     context('Admin only post', () => {
-      it('Should respond with the status code of 403', (done) => {
+      it.only('Should respond with the status code of 403', (done) => {
         chai.request(server)
         .post('/admin-only')
         .end((error, response) => {
-          expect(response).to.have.status(403)
+          expect(response).to.be.status(403)
           done()
     })
   })
