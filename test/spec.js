@@ -96,12 +96,12 @@ describe('sandbox-server', () => {
   })
 })
     context('Get old page', () => {
-      it('Should respond with status code of 301', (done) => {
+      it.only('Should respond with status code of 301', (done) => {
         chai.request(server)
         .get('/old-page')
         .end((error, response) => {
           expect(response).to.have.status(301)
-          expect(response.header['Content-location']).to.have.header('http://localhost:3000/newpage')
+          expect(response.header['content-location']).to.have.header('http://localhost:3000/newpage')
           done()
     })
   })

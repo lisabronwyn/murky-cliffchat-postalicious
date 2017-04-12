@@ -38,6 +38,11 @@ router.get('/myjsondata', function(request, response) {
     response.status(200).send({"title":"some JSON data"})
 })
 
+router.get('/old-page', function(request, response) {
+  response.status(301)
+  response.location('http://localhost:3000/newpage')
+})
+
 
 
 
