@@ -47,8 +47,12 @@ router.post('/admin-only', function(request, response) {
   response.status(403).end();
 })
 
-router.post('/not-a-page', function(request, response) {
+router.get('/not-a-page', function(request, response) {
   response.status(404).end();
+})
+
+router.get('/server-error', function(request, response) {
+  response.status(500).end();
 })
 
 // Add other routes here

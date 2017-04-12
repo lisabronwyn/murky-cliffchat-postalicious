@@ -107,7 +107,7 @@ describe('sandbox-server', () => {
   })
 })
     context('Admin only post', () => {
-      it.only('Should respond with the status code of 403', (done) => {
+      it('Should respond with the status code of 403', (done) => {
         chai.request(server)
         .post('/admin-only')
         .end((error, response) => {
