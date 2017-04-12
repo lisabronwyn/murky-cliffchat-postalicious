@@ -64,6 +64,7 @@ describe('sandbox-server', () => {
       it('Should respond with a status code of 200', (done) => {
         chai.request(server)
       .get('/somefile')
+      .set('Accept', 'text/plain')
       .end((error, response) => {
         expect(response).to.have.status(200)
         expect(response.text).to.equal('This is a plain text file')
@@ -72,14 +73,14 @@ describe('sandbox-server', () => {
     })
   })
 })
-    context('Get some file', () => {
-      it('Should respond with a status code of 200', (done) => {
+    context('Get HTML file', () => {
+      it.only('Should respond with a status code of 200', (done) => {
         chai.request(server)
       .get('/somefile')
       .end((error, response) => {
         expect(response).to.have.status(200)
         expect(response.text).to.equal('<!DOCTYPE html><html><body>This is an HTML file</body></html>')
-        expect(response).to.have.header('content-type', 'text/html;charset=utf-8')
+        expect(response).to.have.header('content-type', 'text/html; charset=utf-8')
         done()
     })
   })
