@@ -6,66 +6,70 @@ chai.use(chaiHttp)
 const should = require('chai').should()
 
 describe('sandbox-server', () => {
-    context('homepage, onload', () => {
-      it('Should respond with a status code of 200', (done) => {
-        chai.request(server)
-      .get('/')
-      .end((error, response) => {
-        expect(response).to.have.status(200)
-        expect(response.text).to.equal('Welcome to Sandbox!')
-        expect(response).to.have.header('content-type', 'text/plain; charset=utf-8')
-        done()
-})
-})
-})
-    context('Search for doodads', () => {
-      it('Should respond with a status code of 200', (done) => {
-        chai.request(server)
-      .get('/search')
-      .query({'q':"doodads"})
-      .end((error, response) => {
-        expect(response).to.have.status(200)
-        expect(response.text).to.equal('You searched for: \"doodads\"')
-        expect(response).to.have.header('content-type', 'text/plain; charset=utf-8')
-        done()
-})
-})
-})
-    context('Bad request', () => {
-      it('Should respond with a status code of 400', (done) => {
-        chai.request(server)
-      .get('/search')
-      .end((error, response) => {
-        expect(response).to.have.status(400)
-        expect(response.text).to.equal('You didn\'t\ provide a search query term :(')
-        expect(response).to.have.header('content-type', 'text/plain; charset=utf-8')
-        done()
-})
-})
-})
-    context('Flying car post', () => {
-      it('Should respond with a status code of 201', (done) => {
-        chai.request(server)
-      .post('/things')
-      .send({'New thing created': 'flying car'})
-      .end((error, response) => {
-        expect(response).to.have.status(201)
-        expect(response.text).to.equal('New thing created: flying car!')
-        expect(response).to.have.header('content-type', 'text/plain; charset=utf-8')
-        done()
+  context('homepage, onload', () => {
+    it('Should respond with a status code of 200', (done) => {
+      chai.request(server)
+    .get('/')
+    .end((error, response) => {
+      expect(response).to.have.status(200)
+      expect(response.text).to.equal('Welcome to Sandbox!')
+      expect(response).to.have.header('content-type', 'text/plain; charset=utf-8')
+      done()
     })
   })
 })
-    context('Get some file', () => {
-      it('Should respond with a status code of 200', (done) => {
-        chai.request(server)
-      .get('/somefile')
-      .set('Accept', 'text/plain')
-      .end((error, response) => {
-        expect(response).to.have.status(200)
-        expect(response.text).to.equal('This is a plain text file')
-        expect(response).to.have.header('content-type', 'text/plain; charset=utf-8')
-        done()
+
+  context('Search for doodads', () => {
+    it('Should respond with a status code of 200', (done) => {
+      chai.request(server)
+    .get('/search')
+    .query({'q':"doodads"})
+    .end((error, response) => {
+      expect(response).to.have.status(200)
+      expect(response.text).to.equal('You searched for: \"doodads\"')
+      expect(response).to.have.header('content-type', 'text/plain; charset=utf-8')
+      done()
+    })
+  })
+})
+
+  context('Bad request', () => {
+    it('Should respond with a status code of 400', (done) => {
+      chai.request(server)
+    .get('/search')
+    .end((error, response) => {
+      expect(response).to.have.status(400)
+      expect(response.text).to.equal('You didn\'t\ provide a search query term :(')
+      expect(response).to.have.header('content-type', 'text/plain; charset=utf-8')
+      done()
+    })
+  })
+})
+
+  context('Flying car post', () => {
+    it('Should respond with a status code of 201', (done) => {
+      chai.request(server)
+    .post('/things')
+    .send({'New thing created': 'flying car'})
+    .end((error, response) => {
+      expect(response).to.have.status(201)
+      expect(response.text).to.equal('New thing created: flying car!')
+      expect(response).to.have.header('content-type', 'text/plain; charset=utf-8')
+      done()
+    })
+  })
+})
+
+  context('Get some file', () => {
+    it('Should respond with a status code of 200', (done) => {
+      chai.request(server)
+    .get('/somefile')
+    .set('Accept', 'text/plain')
+    .end((error, response) => {
+      expect(response).to.have.status(200)
+      expect(response.text).to.equal('This is a plain text file')
+      expect(response).to.have.header('content-type', 'text/plain; charset=utf-8')
+      done()
     })
   })
 })
@@ -106,6 +110,7 @@ describe('sandbox-server', () => {
     })
   })
 })
+
     context('Admin only post', () => {
       it('Should respond with the status code of 403', (done) => {
         chai.request(server)
