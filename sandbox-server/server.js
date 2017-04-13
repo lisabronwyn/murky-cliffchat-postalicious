@@ -2,10 +2,11 @@ const express = require('express')
 // const bodyParser = require('body-parser')
 // const path = require('path')
 // const port = 3000
-// const routes = require('./routes.js')
+const routes = require('./routes')
 const server = express()
-const http = require('http').createServer(server)
+// const http = require('http').createServer(server)
 
+server.use('/', routes)
 
 server.get('/', (request, response) => {
   response.set('content-type', 'text/plain')
