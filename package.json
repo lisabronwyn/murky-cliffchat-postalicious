@@ -32,11 +32,10 @@
     "eslint-plugin-promise": "^3.5.0",
     "eslint-plugin-standard": "^3.0.1",
     "express": "^4.15.2",
+    "fetch": "^1.1.0",
     "http": "0.0.0",
     "morgan": "^1.8.1",
-
     "nodemon": "^1.11.0"
-
   },
   "devDependencies": {
     "eslint": "^3.19.0",
