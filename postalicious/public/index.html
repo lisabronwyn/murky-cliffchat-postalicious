@@ -6,14 +6,55 @@
     <link rel="stylesheet" type ="text/css" href="/stylesheets/styles.css">
   </head>
   <body>
+
     <div class="flex-container">
-      <div class="flex-item-header">Postalicious</div>
+      <div class="flex-item-header">
+        <h3>Postalicious</h3>
+      </div>
     </div>
 
     <div class="flex-container">
-      <div class="flex-item-forms">Method</div>
-      <div class="flex-item-forms">Query Parameters</div>
-      <div class="flex-item-forms">Headers</div>
+      <div class="flex-item-forms">
+        <h4>Method</h4>
+        <select>
+          <option value="GET">GET</option>
+          <option value="POST">POST</option>
+          <option value="PUT">PUT</option>
+          <option value="PATCH">PATCH</option>
+          <option value="DELETE">DELETE</option>
+          <option value="COPY">COPY</option>
+          <option value="HEAD">HEAD</option>
+          <option value="OPTIONS">OPTIONS</option>
+          <option value="LINK">LINK</option>
+          <option value="UNLINK">UNLINK</option>
+          <option value="PURGE">PURGE</option>
+          <option value="LOCK">LOCK</option>
+          <option value="UNLOCK">UNLOCK</option>
+          <option value="PROPFIND">PROPFIND</option>
+          <option value="VIEW">VIEW</option>
+        </select>
+      <input type="text" name="Host">
+    </div>
+
+      <div class="flex-item-forms">
+        <h4>Query Parameters</h4>
+        <input class="keys" type="text" value="" placeholder="Key">
+        <input class="values" type="text" value="" placeholder="Values">
+        <input class="keys" type="text" value="" placeholder="Key">
+        <input class="values" type="text" value="" placeholder="Values">
+        <input class="keys" type="text" value="" placeholder="Key">
+        <input class="values" type="text" value="" placeholder="Values">
+      </div>
+
+      <div class="flex-item-forms">
+        <h4>Headers</h4>
+        <input class="keys" type="text" value="" placeholder="Key">
+        <input class="values" type="text" value="" placeholder="Values">
+        <input class="keys" type="text" value="" placeholder="Key">
+        <input class="values" type="text" value="" placeholder="Values">
+        <input class="keys" type="text" value="" placeholder="Key">
+        <input class="values" type="text" value="" placeholder="Values">
+      </div>
        <div class="flex-item-forms">Body</div>
     </div>
 
@@ -30,7 +71,7 @@
     </div>
 
     <div class="flex-container">
-      <div class="flex-item-reqresBody">"BODY</div>
+      <div class="flex-item-reqresBody">BODY</div>
       <div class="flex-item-reqresBody">BODY</div>
     </div>
   </body>
