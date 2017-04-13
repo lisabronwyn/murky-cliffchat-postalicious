@@ -14,10 +14,10 @@
     </div>
 
     <div class="flex-container">
-      <form method="POST" action="/getdata">
+      <!-- <form method="POST" action="/getdata"> -->
         <div class="flex-item-forms">
           <h4>Method</h4>
-          <select name="method">
+          <select id="method">
             <option value="GET">GET</option>
             <option value="POST">POST</option>
             <option value="PUT">PUT</option>
@@ -34,9 +34,9 @@
             <option value="PROPFIND">PROPFIND</option>
             <option value="VIEW">VIEW</option>
           </select>
-        <input type="text" name="url">
+        <input type="text" id="url" value="http://">
       </div>
-    </form>
+    <!-- </form> -->
 
       <div class="flex-item-forms">
         <h4>Query Parameters</h4>
@@ -61,8 +61,8 @@
     </div>
 
     <div class="flex-container">
-      <input type="submit" value="Build Request" class="flex-item-button">
-      <input type="submit" value="Build & Send  " class="flex-item-button">
+      <input type="submit" onclick="build()" value="Build Request" class="flex-item-button">
+      <input type="submit" onclick="buildRequest()" value="Build & Send" class="flex-item-button">
     </div>
     <!-- <div class="flex-item-button">Build Request</div> -->
     </div>
@@ -73,8 +73,10 @@
     </div>
 
     <div class="flex-container">
-      <div class="flex-item-reqresBody">BODY</div>
-      <div class="flex-item-reqresBody">BODY</div>
+      <div class="flex-item-requestBody">BODY</div>
+      <div class="flex-item-responseBody">BODY</div>
     </div>
+
+    <script src="/commands.js"></script>
   </body>
 </html>
