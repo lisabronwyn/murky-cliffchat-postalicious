@@ -39,13 +39,13 @@
     margin: 1px;
 }
 
-.flex-item-reqres {
+.flex-item-requestBody {
 	background-color: cornflowerblue;
     width: 50% ;
-    height: 30px;
+    height: 300px;
     margin: 1px;
 }
-.flex-item-reqresBody {
+.flex-item-responseBody {
 	background-color: cornflowerblue;
     width: 50% ;
     height: 300px;
