@@ -3,6 +3,7 @@
   <head>
     <meta charset="utf-8">
     <title>Postalicious</title>
+    <link href="https://fonts.googleapis.com/css?family=Arimo|Pacifico" rel="stylesheet">
     <link rel="stylesheet" type ="text/css" href="/stylesheets/styles.css">
   </head>
   <body>
@@ -14,11 +15,11 @@
     </div>
 
     <div class="flex-container">
-      <!-- <form method="POST" action="/getdata"> -->
+      <form id="request-form">
         <div class="flex-item-forms">
           <h4>Method</h4>
-          <select id="method">
-            <option value="GET">GET</option>
+          <select id="method" name="method">
+            <option  id="option1" value="GET">GET</option>
             <option value="POST">POST</option>
             <option value="PUT">PUT</option>
             <option value="PATCH">PATCH</option>
@@ -34,9 +35,9 @@
             <option value="PROPFIND">PROPFIND</option>
             <option value="VIEW">VIEW</option>
           </select>
-        <input type="text" id="url" value="http://">
-      </div>
-    <!-- </form> -->
+          <input type="text" id="urlId" name="url">
+        </div>
+      </form>
 
       <div class="flex-item-forms">
         <h4>Query Parameters</h4>
@@ -77,6 +78,10 @@
       <div class="flex-item-responseBody">BODY</div>
     </div>
 
+    <script
+    src="https://code.jquery.com/jquery-3.2.1.min.js"
+    integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+    crossorigin="anonymous"></script>
     <script src="/commands.js"></script>
   </body>
 </html>

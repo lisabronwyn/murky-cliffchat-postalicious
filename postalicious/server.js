@@ -12,7 +12,7 @@ server.use(bodyParser.urlencoded({extended: true}))
 server.use('/', express.static(path.join(__dirname, 'public')))
 
 server.post('/getdata', (request, response) => {
-  console.log("======>THIS",request.body)
+  console.log("======>THIS",request.body.url)
   fetchUrl(request.body.url, function(error, meta, body){
     if(error) response.json({error})
 
